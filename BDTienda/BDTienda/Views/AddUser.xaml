@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="BDTienda.Views.AddUser"
+             xmlns:vm="clr-namespace:BDTienda.ViewModels"
+             Title="Agregar">
+    <ContentPage.BindingContext>
+        <vm:UserViewModel/>
+    </ContentPage.BindingContext>
+    
+    <ContentPage.Content>
+        <StackLayout>
+            <Button Text="Saved" Command="{Binding GuardarCommand}"/>
+
+            <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Label Text="Nombre"
+                                   Grid.Row="0"
+                                   Grid.Column="0"/>
+            <Entry  Text="{Binding Nombre}"
+                Placeholder="nombre" 
+                HorizontalOptions="FillAndExpand" 
+                Grid.Row="1"
+                Grid.Column="0"/>
+
+            <Label Text="Apellido"
+                                   Grid.Row="0"
+                                   Grid.Column="1"/>
+            <Entry  Text="{Binding Apellido}"
+                Placeholder="apeliido" 
+                HorizontalOptions="FillAndExpand" 
+                Grid.Row="1"
+                Grid.Column="1"/>
+
+            <Label Text="Genero"
+                                   Grid.Row="0"
+                                   Grid.Column="2"/>
+            <Entry  Text="{Binding Genero}"
+                Placeholder="Genero" 
+                HorizontalOptions="FillAndExpand" 
+                Grid.Row="1"
+                Grid.Column="2"/>
+
+            <Label Text="Edad"
+                                   Grid.Row="0"
+                                   Grid.Column="3"/>
+            <Entry  Text="{Binding Edad}"
+                Placeholder="Edad" 
+                HorizontalOptions="FillAndExpand" 
+                Grid.Row="1"
+                Grid.Column="3"/>
+
+        </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

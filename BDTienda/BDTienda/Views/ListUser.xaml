@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="BDTienda.Views.ListUser"
+               xmlns:vm="clr-namespace:BDTienda.ViewModels"
+             Title="lista">
+
+    <ContentPage.BindingContext>
+        <vm:UserViewModel/>
+    </ContentPage.BindingContext>
+    
+    <ContentPage.Content>
+
+        <ListView
+            x:Name="UserList"
+            ItemsSource="{Binding UserViewModels.GetUser}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Label Text="Nombre"
+                                   Grid.Row="0"
+                                   Grid.Column="0"/>
+                            <Label Text="{Binding Nombre}"
+                                   Grid.Row="1"
+                                   Grid.Column="0"/>
+
+                            <Label Text="Apellido"
+                                   Grid.Row="0"
+                                   Grid.Column="1"/>
+                            <Label Text="{Binding Apellido}"
+                                   Grid.Row="1"
+                                   Grid.Column="1"/>
+
+                            <Label Text="Genero"
+                                   Grid.Row="0"
+                                   Grid.Column="2"/>
+                            <Label Text="{Binding Genero}"
+                                   Grid.Row="1"
+                                   Grid.Column="2"/>
+
+                            <Label Text="Edad"
+                                   Grid.Row="0"
+                                   Grid.Column="3"/>
+                            <Label Text="{Binding Edad}"
+                                   Grid.Row="1"
+                                   Grid.Column="3"/>
+
+                        </Grid>
+                        
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+
+        </ListView>
+        
+    </ContentPage.Content>
+</ContentPage>
